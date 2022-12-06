@@ -3,9 +3,9 @@
 Console.Clear();
 Console.WriteLine("Input 5 numbers");
 string number = Convert.ToString(Console.ReadLine());
+
 // Проверка на ввод букв
-double numericCheck;
-bool isNumber=double.TryParse(number, out numericCheck);
+bool isNumber=double.TryParse(number, out double numericCheck);
 
 if (numericCheck==0)
     Console.WriteLine("You should input only numbers");
@@ -19,4 +19,3 @@ else
             Console.WriteLine("Number " + number + " is palindrom");
         else
             Console.WriteLine("Number " + number + " is not palindrom");
-
