@@ -10,14 +10,35 @@ int[] points = new int[6];
 
 Console.WriteLine("Input coordinate point A");
 for (int i = 0; i < 3; i++)
-    points[i] = Convert.ToInt32(Console.ReadLine());
+{
+    string A = Convert.ToString(Console.ReadLine());    
+    
+    bool result = int.TryParse(A, out int B);           // Проверка на ввод букв
+    if (result == false)
+    {
+        Console.WriteLine("You should input only numbers");
+        Environment.Exit(0);
+    }
+    else points[i] = Convert.ToInt32(A);
+}
+
 
 Console.WriteLine("Input coordinate point B");
 for (int i = 3; i < 6; i++)
-    points[i] = Convert.ToInt32(Console.ReadLine());
+{
+    string C = Convert.ToString(Console.ReadLine());    
     
+    bool result = int.TryParse(C, out int E);       // Проверка на ввод букв
+    if (result == false)
+    {
+        Console.WriteLine("You should input only numbers");
+        Environment.Exit(0);
+    }
+    else points[i] = Convert.ToInt32(C);
+}
+   
 int X = points[3] - points[0];
 int Y = points[4] - points[1];
 int Z = points[5] - points[2];
-double D = Math.Sqrt(X*X+Y*Y+Z*Z);
-Console.WriteLine("Distance between points: "+D);
+double D = Math.Sqrt(X * X + Y * Y + Z * Z);
+Console.WriteLine("Distance between points: " + D);
